@@ -71,6 +71,7 @@ def create_task(
     return task
 
 
+
 @app.put("/tasks/{task_id}", response_model=TaskResponse)
 def update_task(
     task_id: int,
@@ -82,12 +83,14 @@ def update_task(
     if task is None:
         raise HTTPException(status_code=404, detail="Task not found")
 
-    for key, value in task_data.model_dump().items():
+    # Update only fields supplied in the request
+    for key, value in task_data.model_dump(exclude_unset=True).items():
         setattr(task, key, value)
 
     db.commit()
     db.refresh(task)
     return task
+
 
 
 @app.delete("/tasks/{task_id}")
