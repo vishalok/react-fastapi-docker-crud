@@ -27,3 +27,49 @@ h2 { font-size: 18px; }
 footer { margin-top: 28px; color: #667085; font-size: 13px; }
 a { color: #2563eb; }
 @media (max-width: 600px) { .app { margin: 16px; padding: 22px; } .task { flex-wrap: wrap; } .actions { margin-left: 28px; } }
+
+.task-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font: inherit;
+  resize: vertical;
+}
+
+.task-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.task-description {
+  margin: 0;
+  overflow-wrap: anywhere;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.task-content small {
+  color: #777;
+}
+
+
+.task input[type="checkbox"] {
+  display: inline-block;
+  appearance: auto;
+  -webkit-appearance: auto;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  margin: 0;
+  accent-color: #2563eb;
+  cursor: pointer;
+  opacity: 1;
+  pointer-events: auto;
+  flex-shrink: 0;
+}
+
